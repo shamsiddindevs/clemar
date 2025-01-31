@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import slide from "../assets/diploma.webp";
-import slide2 from "../assets/xxl.webp";
+import slide2 from "../assets/XXl.webp";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Carusel.css";
