@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4 ">
             <div className="flex items-center gap-2">
-              <img src="../../src/assets/lightLogo.png" alt="Clemar Logo" className="h-8" />
+              <img src="../../public/assets/lightLogo.png" alt="Clemar Logo" className="h-8" />
             </div>
             <p className="text-gray-400 text-sm">
               Представляем лучшие мировые бренды  в  <br /> Узбекистане

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../assets/logo.png";
+import logo from "../../public/assets/logo.png";
 import { IoClose, IoSearch, IoSearchOutline } from "react-icons/io5";
 import { MdKeyboardArrowRight, MdOutlineShoppingBag } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";

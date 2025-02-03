@@ -1,46 +1,17 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-const productCategories = [
-  {
-    id: 1,
-    title: "Бумажная продукция",
-    count: 78,
-    image: "../../src/assets/paper.png",
-  },
-  {
-    id: 2,
-    title: "Моющие средства",
-    count: 43,
-    image: "../../src/assets/cleaning.png",
-  },
-  {
-    id: 3,
-    title: "Поломоечные машины",
-    count: 8,
-    image: "../../src/assets/scrubber.png",
-  },
-  {
-    id: 4,
-    title: "Пылесосы",
-    count: 7,
-    image: "../../src/assets/vacum.png",
-  },
-  {
-    id :5,
-    title: "Уборочные инвентарь",
-    count: 8,
-    image: "../../src/assets/equipment.png",
-  }
-];
-
 const Products = () => {
+  const productCategories = useSelector((state) => state?.categories).filter(
+    (category) => category.catalog === "main"
+  );
   return (
     <div className="container  mt-36 mb-24 ">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {productCategories.map((category) => (
           <Link
             key={category.id}
-            to={`/category/${category.id}`}
+            to={`/product-category/${category.link}`}
             className="bg-gray-50 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
           >
             <div className="aspect-square mb-4 flex items-center justify-center">

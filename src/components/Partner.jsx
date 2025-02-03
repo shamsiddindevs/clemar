@@ -3,142 +3,142 @@ const Partner = () => {
     {
       id: 1,
       name: 'KIA',
-      logo: '../../src/assets/kia.png'
+      logo: '../../public/assets/kia.png'
     },
     {
       id: 2,
       name: 'Texnopari',
-      logo: '../../src/assets/texno.png'
+      logo: '../../public/assets/texno.png'
     },
     {
       id: 3,
       name: 'BYD',
-      logo: '../../src/assets/byd.png'
+      logo: '../../public/assets/byd.png'
     },
     {
       id: 4,
       name: 'SAG',
-      logo: '../../src/assets/sag.png'
+      logo: '../../public/assets/sag.png'
     },
     {
       id: 5,
       name: 'Artel',
-      logo: '../../src/assets/artel.png'
+      logo: '../../public/assets/artel.png'
     },
     {
       id: 6,
       name: 'Akfa',
-      logo: '../../src/assets/akfa.png'
+      logo: '../../public/assets/akfa.png'
     },
     {
       id: 7,
       name: 'Imzo',
-      logo: '../../src/assets/imzo.png'
+      logo: '../../public/assets/imzo.png'
     },
     {
       id: 8,
       name: 'Ecobozor',
-      logo: '../../src/assets/ecobozor.png'
+      logo: '../../public/assets/ecobozor.png'
     },
     {
       id: 9,
       name: 'UzAuto Motors',
-      logo: '../../src/assets/uzauto.png'
+      logo: '../../public/assets/uzauto.png'
     },
     {
       id: 10,
       name: 'Tashkent City Mall',
-      logo: '../../src/assets/citymall.png'
+      logo: '../../public/assets/citymall.png'
     },
     {
       id: 11,
       name: 'Uzbekistan Airways',
-      logo: '../../src/assets/uzair.png'
+      logo: '../../public/assets/uzair.png'
     },
     {
       id: 12,
       name: 'Metro',
-      logo: '../../src/assets/metro.png'
+      logo: '../../public/assets/metro.png'
     },
     {
       id: 13,
       name: 'IT Park',
-      logo: '../../src/assets/itpark.png'
+      logo: '../../public/assets/itpark.png'
     },
     {
       id: 14,
       name: 'Pepsi',
-      logo: '../../src/assets/pepsi.png'
+      logo: '../../public/assets/pepsi.png'
     },
     {
       id: 15,
       name: 'Coca Cola',
-      logo: '../../src/assets/cola.png'
+      logo: '../../public/assets/cola.png'
     },
     {
       id: 16,
       name: 'Tashkent City',
-      logo: '../../src/assets/city.png'
+      logo: '../../public/assets/city.png'
     },
     {
       id: 17,
       name: 'Uzum',
-      logo: '../../src/assets/uzum.png'
+      logo: '../../public/assets/uzum.png'
     },
     {
       id: 18,
       name: 'Hilton',
-      logo: '../../src/assets/hilton.png'
+      logo: '../../public/assets/hilton.png'
     },
     {
       id: 19,
       name: 'Hyatt Regency',
-      logo: '../../src/assets/hyatt.png'
+      logo: '../../public/assets/hyatt.png'
     },
     {
       id: 20,
       name: 'InterContinental',
-      logo: '../../src/assets/inter.png'
+      logo: '../../public/assets/inter.png'
     },
     {
       id: 21,
       name: 'Sofia',
-      logo: '../../src/assets/sofia.png'
+      logo: '../../public/assets/sofia.png'
     },
     {
       id: 22,
       name: 'Giotto',
-      logo: '../../src/assets/giotto.png'
+      logo: '../../public/assets/giotto.png'
     },
     {
       id: 23,
       name: 'Loook',
-      logo: '../../src/assets/loook.png'
+      logo: '../../public/assets/loook.png'
     },
     {
       id: 24,
       name: 'CAEx',
-      logo: '../../src/assets/caex.png'
+      logo: '../../public/assets/caex.png'
     },
     {
       id: 25,
       name: 'CAE',
-      logo: '../../src/assets/cae.png'
+      logo: '../../public/assets/cae.png'
     },
     {
       id: 26,
       name: 'Enter Engineering',
-      logo: '../../src/assets/enter.png'
+      logo: '../../public/assets/enter.png'
     },
     {
       id: 27,
       name: 'Silk Road Samarkand',
-      logo: '../../src/assets/silk.png'
+      logo: '../../public/assets/silk.png'
     },
     {
       id: 28,
       name: 'Magic City',
-      logo: '../../src/assets/magic.png'
+      logo: '../../public/assets/magic.png'
     }
   ]
 

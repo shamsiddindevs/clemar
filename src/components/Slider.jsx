@@ -8,32 +8,32 @@ const Slider = () => {
     {
       id: 1,
       name: 'BYD',
-      logo: '../../src/assets/byd.png'
+      logo: '../../public/assets/byd.png'
     },
     {
       id: 2,
       name: 'ISA Samarkand',
-      logo: '../../src/assets/sag.png'
+      logo: '../../public/assets/sag.png'
     },
     {
       id: 3,
       name: 'Artel',
-      logo: '../../src/assets/artel.png'
+      logo: '../../public/assets/artel.png'
     },
     {
       id: 4,
       name: 'BK',
-      logo: '../../src/assets/uzair.png'
+      logo: '../../public/assets/uzair.png'
     },
     {
         id: 5,
         name: 'Artel',
-        logo: '../../src/assets/artel.png'
+        logo: '../../public/assets/artel.png'
       },
       {
         id: 6,
         name: 'BK',
-        logo: '../../src/assets/sofia.png'
+        logo: '../../public/assets/sofia.png'
       },
     // Add more brands if needed
   ]

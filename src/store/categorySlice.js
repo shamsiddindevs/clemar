@@ -1,236 +1,589 @@
 import { createSlice } from "@reduxjs/toolkit";
-import paper from "../assets/paper.png";
-import cleaning from "../assets/cleaning.png";
-import vacum from "../assets/vacum.png";
-import scrubber from "../assets/scrubber.png";
-import equipment from "../assets/equipment.png";
-import selpak from "../assets/selpak.jpg";
-import sens from "../assets/sens.jpg";
-import solo from "../assets/solo.jpg";
-import selpakExtra from "../assets/selpakExtra.jpg";
+import paper from "../../public/assets/paper.png";
+import cleaning from "../../public/assets/cleaning.png";  
+import vacum from "../../public/assets/vacum.png";
+import scrubber from "../../public/assets/scrubber.png";
+import equipment from "../../public/assets/equipment.png";
+import selpak from "../../public/assets/selpak.jpg";
+import sens from "../../public/assets/sens.jpg";
+import solo from "../../public/assets/solo.jpg";
+import selpakExtra from "../../public/assets/selpakExtra.jpg";
 
-const initialState = {
-  categories: {
-    title: "Категории",
-    data: [
-      {
-        img: paper,
-        title: "Бумажная продукция",
-        id: 1,
-        description: "Туалетная бумага, салфетки, полотенца",
-        count: 24,
-        link:"бумажная-продукция",
-      },
-      {
-        img: cleaning,
-        title: "Моющие средства",
-        id: 2,
-        description: "Профессиональная химия для уборки",
-        count: 156,
-        link:"моющие-средства"
-      },
-      {
-        img: scrubber,
-        title: "Поломоечные Продукция",
-        id: 5,
-        description: " Поломоечные машины",
-        count: 24,
-        link:"поломоечные-продукция"
-      },
-      {
-        img: vacum,
-        title: "Пылесосы",
-        id: 3,
-        description: "Промышленные пылесосы",
-        count: 42,
-        link:"пылесосы"
-      },
-      {
-        img: equipment,
-        title: "Уборочный инвентарь",
-        id: 4,
-        description: "Швабры, ведра, тележки",
-        count: 85,
-        link:"уборочный-инвентарь"
-      },
-    ],
-  },
-  paperProducts: {
+const initialState = [
+  {
+    id: 1,
     title: "Бумажная продукция",
-    data: [
-      {
-        id: 1,
-        title: "Selpak Professional Extra Z-Сложенное полотенце для диспенсера",
-        category: "БУМАЖНАЯ ПРОДУКЦИЯ",
-        img: selpak,
-        description: "Бумажные полотенца Z-сложения",
-        price: "12000 UZS",
-        isNew: false,
-        specs: {
-          layers: "2 слоя",
-          sheets: "200 листов",
-          size: "21.5x24 см",
-          color: "Белый",
-        },
-      },
-      {
-        id: 2,
-        title: "Sens Туалетная бумага 24 шт.",
-        category: "БУМАЖНАЯ ПРОДУКЦИЯ",
-        img: sens,
-        description: "Туалетная бумага в рулонах",
-        price: "15000 UZS",
-        isNew: false,
-        specs: {
-          layers: "2 слоя",
-          length: "150 метров",
-          quantity: "24 рулона",
-          color: "Белый",
-        },
-      },
-      {
-        id: 3,
-        title: "Solo Professional 1/6 Складные салфетки Официант 26,5×33 см 100 шт.",
-        category: "БУМАЖНАЯ ПРОДУКЦИЯ",
-        img: solo,
-        description: "Бумажные салфетки для HoReCa",
-        price: "8000 UZS",
-        isNew: false,
-        specs: {
-          size: "26.5x33 см",
-          quantity: "100 шт",
-          color: "Белый",
-          type: "Складные",
-        },
-      },
-      {
-        id: 4,
-        title: "Selpak Professional Extra Туалетная бумага 24 шт.",
-        category: "БУМАЖНАЯ ПРОДУКЦИЯ",
-        img: selpakExtra,
-        description: "Профессиональная туалетная бумага",
-        price: "18000 UZS",
-        oldPrice: "20000 UZS",
-        isNew: false,
-        specs: {
-          layers: "2 слоя",
-          length: "180 метров",
-          quantity: "24 рулона",
-          quality: "Extra",
-        },
-      },
-    ],
+    description: "Туалетная бумага, салфетки, полотенца",
+    count: 24,
+    image: paper,
+    images: [paper, paper, paper, paper],
+    link: "бумажная-продукция",
+    type: "paper_product",
+    catalog:"main",
+    singleLink: "туалетная-бумага-салфетки-полотенца"
   },
-  products: {
-    title: "Поломоечные Продукция",
-    data: [
-      {
-        id: 1,
-        title: "T55/50B",
-        category: "Поломоечные машины",
-        img: scrubber,
-        description: "Поломоечная машина",
-        price: "10000 UZS",
-        isNew: false,
-        specs: {
-          width: "50 см",
-          capacity: "40 л",
-          productivity: "2000 м²/ч",
-          power: "500 W",
-          weight: "120 кг",
-        },
-      },
-      {
-        id: 2,
-        title: "T35B",
-        category: "Поломоечные машины",
-        img: scrubber,
-        description: "Поломоечная машина",
-        price: "12000 UZS",
-        isNew: false,
-        specs: {
-          width: "35 см",
-          capacity: "35 л",
-          productivity: "1500 м²/ч",
-          power: "450 W",
-          weight: "95 кг",
-        },
-      },
-      {
-        id: 3,
-        title: "T55/50BT",
-        category: "Поломоечные машины",
-        img: scrubber,
-        description: "Поломоечная машина",
-        price: "15000 UZS",
-        isNew: false,
-        specs: {
-          width: "50 см",
-          capacity: "45 л",
-          productivity: "2200 м²/ч",
-          power: "550 W",
-          weight: "130 кг",
-        },
-      },
-      {
-        id: 4,
-        title: "T45/50B",
-        category: "Поломоечные машины",
-        img: scrubber,
-        description: "Поломоечная машина",
-        price: "16000 UZS",
-        oldPrice: "18000 UZS",
-        isNew: true,
-        specs: {
-          width: "45 см",
-          capacity: "50 л",
-          productivity: "2500 м²/ч",
-          power: "600 W",
-          weight: "140 кг",
-        },
-      },
-    ],
+  {
+    id: 2,
+    title: "Моющие средства",
+    description: "Профессиональная химия для уборки",
+    count: 156,
+    image: cleaning,
+    images: [cleaning, cleaning, cleaning, cleaning],
+    link: "моющие-средства",
+    type: "cleaning_product",
+    catalog:"main",
+    singleLink: "профессиональная-химия-для-уборки"
   },
-  filters: {
-    categories: [
-      { id: 1, name: "Поломоечные машины", count: 24 },
-      { id: 2, name: "Пылесосы", count: 18 },
-      { id: 3, name: "Подметальные машины", count: 12 },
-      { id: 4, name: "Роторные машины", count: 8 },
-    ],
-    brands: [
-      { id: 1, name: "Cleanvac" },
-      { id: 2, name: "Karcher" },
-      { id: 3, name: "Nilfisk" },
-      { id: 4, name: "Tennant" },
-    ],
-    priceRange: {
-      min: 0,
-      max: 50000,
-      currency: "UZS",
-    },
+  {
+    id: 3,
+    title: "Поломоечные машины",
+    description: "T55/50B",
+    price: "10000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "Поломоечные машины",
+    type: "scrubber_product",
+    link: "поломоечные-машины/",
+    isNew: false,
+    catalog:"main",
+    count: 8,
+    singleLink: "t55-50b"
   },
-};
+  {
+    id: 4,
+    title: "Поломоечные машины",
+    description: "T35B",
+    price: "12000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "Поломоечные машины",
+    type: "scrubber_product",
+    link: "поломоечные-машины/",
+    isNew: false,
+    count: 8,
+    singleLink: "t35b"
+  },
+  {
+    id: 5,
+    title: "Поломоечные машины",
+    description: "T55/50BT",
+    price: "15000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "Поломоечные машины",
+    type: "scrubber_product",
+    link: "поломоечные-машины",
+    isNew: false,
+    count: 8,
+    singleLink: "t55-50bt"
+  },
+  {
+    id: 6,
+    title: "Поломоечные машины",
+    description: "T45/50B",
+    price: "16000 UZS",
+    oldPrice: "18000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "Поломоечные машины",
+    type: "scrubber_product",
+    link: "поломоечные-машины/",
+    isNew: true,
+    count: 8,
+    singleLink: "t45-50b"
+  },
+  {
+    id: 7,
+    title: "Пылесосы",
+    description: "Промышленные пылесосы",
+    count: 42,
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    link: "пылесосы",
+    type: "vacuum_product",
+    catalog:"main",
+    singleLink: "промышленные-пылесосы"
+  },
+  {
+    id: 8,
+    title: "Уборочный инвентарь",
+    description: "Швабры, ведра, тележки",
+    count: 85,
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    link: "уборочный-инвентарь",
+    type: "equipment_product",
+    catalog:"main",
+    singleLink: "швабры-ведра-тележки"
+  },
+  {
+    id: 9,
+    title: "Бумажная продукция",
+    description: "Selpak Professional Extra Z-Сложенное полотенце для диспенсера",
+    price: "12000 UZS",
+    image: selpakExtra,
+    images: [selpakExtra, selpakExtra, selpakExtra, selpakExtra],
+    category: "БУМАЖНАЯ ПРОДУКЦИЯ",
+    type: "paper_product",
+    link: "бумажная-продукция",
+    isNew: false,
+    count: 24,
+    singleLink: "selpak-professional-extra-z-сложенное-полотенце-для-диспенсера"
+  },
+  {
+    id: 10,
+    title: "Бумажная продукция",
+    description: "Sens Туалетная бумага 24 шт.",
+    price: "15000 UZS",
+    image: sens,
+    images: [sens, sens, sens, sens],
+    category: "БУМАЖНАЯ ПРОДУКЦИЯ",
+    type: "paper_product",
+    link: "бумажная-продукция",
+    isNew: false,
+    count: 24,
+    singleLink: "sens-туалетная-бумага-24-шт"
+  },
+  {
+    id: 11,
+    title: "Бумажная продукция",
+    description: "Solo Professional 1/6 Складные салфетки Официант 26.5×33 см 100 шт.",
+    price: "18000 UZS",
+    image: solo,
+    images: [solo, solo, solo, solo],
+    category: "БУМАЖНАЯ ПРОДУКЦИЯ",
+    type: "paper_product",
+    link: "бумажная-продукция",
+    isNew: false,
+    count: 24,
+    singleLink: "solo-professional-1-6-складные-салфетки-официант-26-5x33-см-100-шт"
+  },
+  {
+    id: 12,
+    title: "Бумажная продукция",
+    description: "Selpak Professional Extra Туалетная бумага 24 шт.",
+    price: "20000 UZS",
+    image: selpak,
+    images: [selpak, selpak, selpak, selpak],
+    category: "БУМАЖНАЯ ПРОДУКЦИЯ",
+    type: "paper_product",
+    link: "бумажная-продукция",
+    isNew: true,
+    count: 24,
+    singleLink: "selpak-professional-extra-туалетная-бумага-24-шт"
+  },
+  {
+    id: 13,
+    title: "Моющие средства",
+    description: "Maratem M106 5L",
+    price: "25000 UZS",
+    image: cleaning,
+    images: [cleaning, cleaning, cleaning, cleaning],
+    category: "МОЮЩИЕ СРЕДСТВА",
+    type: "cleaning_product",
+    link: "моющие-средства",
+    isNew: false,
+    count: 156,
+    singleLink: "maratem-m106-5l"
+  },
+  {
+    id: 14,
+    title: "Моющие средства",
+    description: "Maratem M107 5l",
+    price: "28000 UZS",
+    image: cleaning,
+    images: [cleaning, cleaning, cleaning, cleaning],
+    category: "МОЮЩИЕ СРЕДСТВА",
+    type: "cleaning_product",
+    link: "моющие-средства",
+    isNew: false,
+    count: 156,
+    singleLink: "maratem-m107-5l"
+  },
+  {
+    id: 15,
+    title: "Моющие средства",
+    description: "Maratem M201 700",
+    price: "32000 UZS",
+    oldPrice: "35000 UZS",
+    image: cleaning,
+    images: [cleaning, cleaning, cleaning, cleaning],
+    category: "МОЮЩИЕ СРЕДСТВА",
+    type: "cleaning_product",
+    link: "моющие-средства",
+    isNew: true,
+    count: 156,
+    singleLink: "maratem-m201-700"
+  },
+  {
+    id: 16,
+    title: "Пылесосы",
+    description: "Пылесос для сухой уборки NT 30/1 Tact L",
+    price: "45000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: false,
+    count: 42,
+    singleLink: "пылесос-для-сухой-уборки-nt-30-1-tact-l"
+  },
+  {
+    id: 17,
+    title: "Пылесосы",
+    description: "Пылесос для сухой и влажной уборки NT 70/2",
+    price: "52000 UZS",
+    oldPrice: "55000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: true,
+    count: 42,
+    singleLink: "пылесос-для-сухой-и-влажной-уборки-nt-70-2"
+  },
+  {
+    id: 18,
+    title: "Пылесосы",
+    description: "Пылесос для сухой уборки T 12/1",
+    price: "48000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: false,
+    count: 42,
+    singleLink: "пылесос-для-сухой-уборки-t-12-1"
+  },
+  {
+    id: 19,
+    title: "Уборочный инвентарь",
+    description: "Тележка уборочная двухведерная",
+    price: "22000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "тележка-уборочная-двухведерная"
+  },
+  {
+    id: 20,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа складной 40 см",
+    price: "15000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-складной-40-см"
+  },
+  {
+    id: 21,
+    title: "Уборочный инвентарь",
+    description: "Набор для уборки совок и щетка",
+    price: "18000 UZS",
+    oldPrice: "20000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: true,
+    count: 85,
+    singleLink: "набор-для-уборки-совок-и-щетка"
+  },
+  {
+    id: 22,
+    title: "Поломоечные машины",
+    description: "T15B",
+    price: "100000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "ПОЛОМОЕЧНЫЕ МАШИНЫ",
+    type: "scrubber_product",
+    link: "поломоечные-машины",
+    isNew: false,
+    count: 8,
+    singleLink: "t15b"
+  },
+  {
+    id: 23,
+    title: "Поломоечные машины",
+    description: "T35B",
+    price: "120000 UZS",
+    oldPrice: "130000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "ПОЛОМОЕЧНЫЕ МАШИНЫ",
+    type: "scrubber_product",
+    link: "поломоечные-машины",
+    isNew: true,
+    count: 8,
+    singleLink: "t35b-scrubber"
+  },
+  {
+    id: 24,
+    title: "Поломоечные машины",
+    description: "T45/50B",
+    price: "100000 UZS",
+    oldPrice: "120000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "ПОЛОМОЕЧНЫЕ МАШИНЫ",
+    type: "scrubber_product",
+    link: "поломоечные-машины",
+    isNew: true,
+    count: 8,
+    singleLink: "t45-50b-scrubber"
+  },
+  {
+    id: 25,
+    title: "Поломоечные машины",
+    description: "T45E+ (T45/50E)",
+    price: "150000 UZS",
+    image: scrubber,
+    images: [scrubber, scrubber, scrubber, scrubber],
+    category: "ПОЛОМОЕЧНЫЕ МАШИНЫ",
+    type: "scrubber_product",
+    link: "поломоечные-машины",
+    isNew: false,
+    count: 8,
+    singleLink: "t45e-plus"
+  },
+  {
+    id: 26,
+    title: "Пылесосы",
+    description: "Вертикальный пылесос BS 360 sebo",
+    price: "85000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: false,
+    count: 42,
+    singleLink: "вертикальный-пылесос-bs-360-sebo"
+  },
+  {
+    id: 27,
+    title: "Пылесосы",
+    description: "Вертикальный пылесос BS 460 sebo",
+    price: "95000 UZS",
+    oldPrice: "100000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: true,
+    count: 42,
+    singleLink: "вертикальный-пылесос-bs-460-sebo"
+  },
+  {
+    id: 28,
+    title: "Пылесосы",
+    description: "Вертикальный пылесос SEBO AUTOMATIC XP 10",
+    price: "120000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: false,
+    count: 42,
+    singleLink: "вертикальный-пылесос-sebo-automatic-xp-10"
+  },
+  {
+    id: 29,
+    title: "Пылесосы",
+    description: "Вертикальный пылесос SEBO AUTOMATIC XP30",
+    price: "130000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: false,
+    count: 42,
+    singleLink: "вертикальный-пылесос-sebo-automatic-xp30"
+  },
+  {
+    id: 30,
+    title: "Пылесосы",
+    description: "Вертикальный пылесос SEBO Evolution 350",
+    price: "140000 UZS",
+    oldPrice: "150000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: true,
+    count: 42,
+    singleLink: "вертикальный-пылесос-sebo-evolution-350"
+  },
+  {
+    id: 31,
+    title: "Пылесосы",
+    description: "Вертикальный пылесос SEBO Evolution 450",
+    price: "160000 UZS",
+    image: vacum,
+    images: [vacum, vacum, vacum, vacum],
+    category: "ПЫЛЕСОСЫ",
+    type: "vacuum_product",
+    link: "пылесосы",
+    isNew: false,
+    count: 42,
+    singleLink: "вертикальный-пылесос-sebo-evolution-450"
+  },
+  {
+    id: 32,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Pocket Lampo 00000854YM",
+    price: "25000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-tts-pocket-lampo-00000854ym"
+  },
+  {
+    id: 33,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Trilogy 0000770X",
+    price: "28000 UZS",
+    oldPrice: "30000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: true,
+    count: 85,
+    singleLink: "держатель-мопа-tts-trilogy-0000770x"
+  },
+  {
+    id: 34,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Uni Junior 0000084GV",
+    price: "22000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-tts-uni-junior-0000084gv"
+  },
+  {
+    id: 35,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Uni System 0000870",
+    price: "26000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-tts-uni-system-0000870"
+  },
+  {
+    id: 36,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Uni System 0000870Y",
+    price: "26000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-tts-uni-system-0000870y"
+  },
+  {
+    id: 37,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Uni System Lampo 00000870YM",
+    price: "29000 UZS",
+    oldPrice: "32000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: true,
+    count: 85,
+    singleLink: "держатель-мопа-tts-uni-system-lampo-00000870ym"
+  },
+  {
+    id: 38,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Velook 0000087EY",
+    price: "24000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-tts-velook-0000087ey"
+  },
+  {
+    id: 39,
+    title: "Уборочный инвентарь",
+    description: "Держатель мопа TTS Wet Disinfection Blik 0000087YE",
+    price: "27000 UZS",
+    image: equipment,
+    images: [equipment, equipment, equipment, equipment],
+    category: "УБОРОЧНЫЙ ИНВЕНТАРЬ",
+    type: "equipment_product",
+    link: "уборочный-инвентарь",
+    isNew: false,
+    count: 85,
+    singleLink: "держатель-мопа-tts-wet-disinfection-blik-0000087ye"
+  }
+];
 
 export const categorySlice = createSlice({
   name: "categories",
   initialState,
   reducers: {
     filterByCategory: (state, action) => {
-      // Filter logic here
+      return state.filter(item => item.type === action.payload);
     },
     filterByPrice: (state, action) => {
-      // Price filter logic here
+      return state.filter(item => {
+        const price = parseInt(item.price.split(' ')[0]);
+        return price >= action.payload.min && price <= action.payload.max;
+      });
     },
-    filterByBrand: (state, action) => {
-      // Brand filter logic here
-    },
-    sortProducts: (state, action) => {
-      // Sorting logic here
-    },
+    getProductById: (state, action) => {
+      return state.find(item => item.id === action.payload) || null;
+    }
   },
 });
 
-export const { filterByCategory, filterByPrice, filterByBrand, sortProducts } =
-  categorySlice.actions;
+export const {
+  filterByCategory,
+  filterByPrice,
+  getProductById
+} = categorySlice.actions;
+
 export default categorySlice.reducer;
